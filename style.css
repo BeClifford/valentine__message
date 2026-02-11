@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* colors */
+   --clr-400: rgb(249, 232, 236);   /* soft blush cream */
+   --clr-500: rgb(222, 131, 170);   /* dusty rose brown */
+   --clr-txt:rgb(110, 60, 80);   /* deep warm brown */
+   --clr-envelope: rgb(236, 201, 212);  /* warm paper pink */
+   --clr-envelope-flap: rgb(214, 160, 178); 
+
+   /* typography */
+   --fs-300: 0.75rem
+   --fs-400: 1rem; /* base font */
+   --fs-500: 1.25rem;
+   --fs-600: 1.50rem;
+   --fs-900: 2.5rem;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--clr-400);
+    color: var(--clr-txt);
+}
+
+.grand__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 2em;
+    border-radius: 8px;
+}
+
+.question__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.question {
+    font-family: "Style Script", sans-serif;
+    font-size: var(--fs-900);
+}
+
+.heading {
+    margin-bottom: 0.85em;
+}
+
+.btn {
+    padding: 8px 4px;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-size: var(--fs-300);
+    color: #fff;
+    background: var(--clr-500);
+    width: 70px;
+    border-radius: 4px;
+}
+
+/* .play__music {
+    width: auto;
+    position: absolute;
+    right: 2vw;
+    top: 2vh;
+    color: var(--clr-txt);
+} */
+
+
+.btn:nth-child(1) {
+    margin-right: 1em;
+}
+
+/* Envelope Styling */
+/* .hidden {
+    display: none;
+} */
+
+.envelope__body {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background: var(--clr-envelope);
+}
+
+.envelope__flap {
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%); /* creates the triangle*/
+    background-color: rgb(214, 160, 178);
+    width: 100%;
+    height:50%;
+    background: var(--clr-envelope-flap);
+}
