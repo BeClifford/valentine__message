@@ -10,18 +10,24 @@ html {
 
 :root {
     /* colors */
-   --clr-400: rgb(249, 232, 236);   /* soft blush cream */
-   --clr-500: rgb(222, 131, 170);   /* dusty rose brown */
-   --clr-txt:rgb(110, 60, 80);   /* deep warm brown */
-   --clr-envelope: rgb(236, 201, 212);  /* warm paper pink */
+   --clr-400: #ff74d4;  
+   --clr-500: #ff36ab;   
+   --clr-txt: #ffb8de;   
+   --clr-envelope: #ffdde1;  
    --clr-envelope-flap: rgb(214, 160, 178); 
+   --clr-envelope-pocket: rgb(104, 50, 165); 
 
    /* typography */
-   --fs-300: 0.75rem
+   --fs-300: 0.75rem;
    --fs-400: 1rem; /* base font */
    --fs-500: 1.25rem;
    --fs-600: 1.50rem;
    --fs-900: 2.5rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 body {
@@ -29,81 +35,153 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     background: var(--clr-400);
-    color: var(--clr-txt);
-}
-
-.grand__wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container {
-    background: white;
-    padding: 2em;
-    border-radius: 8px;
+.wrapper {
+    position: relative;
+    background: var(--clr-txt);
+    width: 50vw;
+    padding: 5rem 0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.question__wrapper {
+.question,
+.envelope {
+    position: absolute;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.question {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.question {
+.proposal {
+    color: #fff;
     font-family: "Style Script", sans-serif;
     font-size: var(--fs-900);
-}
-
-.heading {
-    margin-bottom: 0.85em;
+    margin-bottom: var(--fs-300);
 }
 
 .btn {
-    padding: 8px 4px;
-    border: none;
-    font-family: "Poppins", sans-serif;
-    font-size: var(--fs-300);
-    color: #fff;
     background: var(--clr-500);
-    width: 70px;
+    color: #fff;
+    padding: 8px 4px;
+    font-size: var(--fs-400);
+    width: 5em;
+    border: none;
     border-radius: 4px;
 }
 
-/* .play__music {
-    width: auto;
-    position: absolute;
-    right: 2vw;
-    top: 2vh;
-    color: var(--clr-txt);
-} */
-
-
 .btn:nth-child(1) {
-    margin-right: 1em;
+    margin-right: var(--fs-300);
 }
 
-/* Envelope Styling */
-/* .hidden {
-    display: none;
-} */
+.no__btn {
+    background: var(--clr-400);
+}
 
-.envelope__body {
+
+.envelope__container {
     position: relative;
-    width: 100%;
-    height: 150px;
+    width: 500px;
+    height: 250px;
     background: var(--clr-envelope);
+    border-radius: 8px;
+    margin-bottom: var(--fs-300);
 }
 
-.envelope__flap {
-    clip-path: polygon(0% 0%, 100% 0%, 50% 100%); /* creates the triangle*/
-    background-color: rgb(214, 160, 178);
+.open__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.open__envelope {
+    border-radius: 50px;
+}
+
+.flap {
+    position: absolute;
+    top: 0px;
+    clip-path: polygon(0% 0%, 50% 50%, 100% 0%);
     width: 100%;
-    height:50%;
-    background: var(--clr-envelope-flap);
+    height: 300px;
+    background: var(--clr-400);
+    border-radius: 8px;
+    transform-origin: top;
+}
+
+.pocket {
+    position: absolute;
+    bottom: -1px;
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%, 50% 50%);
+    width: 100%;
+    height: 100%;
+    background: var(--clr-envelope);
+    border-radius: 8px;
+}
+
+.letter {
+    width: 50%;
+    /* height: 100%; */
+    border-radius: 8px;
+    align-self: center;
+    justify-self: center;
+}
+
+.popUp {
+    animation: popUp 5s forwards;
+}
+
+.open__flap {
+    transform: rotateX(180deg);
+}
+
+.slideOut {
+    animation: slideOut 0.5s forwards;
+}
+
+.slideIn {
+    animation: slideIn 0.5s forwards;
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateX(1000px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-1000px);
+    }
+}
+
+@keyframes popUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-95px);
+    }
 }

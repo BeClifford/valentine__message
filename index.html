@@ -6,49 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Font (optional but nice) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">   
     <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="wrapper">
+        <div class="question">
+            <h1 class="proposal">Will you be my Valentine💕?</h1>
 
-    <!-- <button class="btn play__music">Play Music</button> -->
-
-    <div class="grand__wrapper">
-
-        <div class="container">
-    
-            <div class="question__wrapper">
-    
-                <div class="heading">
-                    <h1 class="question">Will you be my valentine?</h1>
-                </div>
-    
-                <div class="button__wrapper">
-                    <button id="yesBtn" class="btn yes-btn">YES</button>
-                    <button id="noBtn" class="btn no-btn">NO</button>
-                </div>
-    
+            <div class="button__container">
+                <button id="yesBtn" class="btn yes__btn">Yes</button>
+                <button id="noBtn" class="btn no__btn">No</button>
             </div>
-    
-    
-            <!-- Hidden success message --> 
-            <div id="envelope" class="hidden">
-                
-                <!-- envelope body(content holder) -->
-                <div class="envelope__body">
-                     <!-- envelope flap(closing and opening lid) -->
-                     <div class="envelope__flap"></div>
-                     <div class="letter__sheet"></div>
-                 </div>
+        </div>
 
+        <div class="hidden" id="envelope">
+            <div class="envelope__container">
+                <div class="flap"></div>
+                <div class="letter"><img src="assets/paper.png" alt=""></div>
+                <div class="pocket"></div>
             </div>
-    
+            <div class="open__container">
+                <button id="openFlap" class="btn open__envelope">Open</button>
+            </div>
         </div>
     </div>
+    
 
 
     <!-- JavaScript -->
