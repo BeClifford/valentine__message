@@ -71,6 +71,7 @@ body {
 .proposal {
     color: #fff;
     font-family: "Style Script", sans-serif;
+    text-align: center;
     font-size: var(--fs-900);
     margin-bottom: var(--fs-300);
 }
@@ -136,7 +137,6 @@ body {
 
 .letter {
     width: 50%;
-    /* height: 100%; */
     border-radius: 8px;
     align-self: center;
     justify-self: center;
@@ -179,9 +179,9 @@ body {
 
 @keyframes popUp {
     from {
-        transform: translateY(0);
+        transform: translateY(50px);
     }
     to {
-        transform: translateY(-95px);
+        transform: translateY(-75px);
     }
 }
